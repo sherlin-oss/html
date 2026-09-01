@@ -62,7 +62,7 @@ body{
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 1;
     display: none;
 }
 
@@ -74,7 +74,7 @@ body{
     position: absolute;
     top: 20%;
     left: 30%;
-    z-index: 3;
+    z-index: 2;
     display:none;
 }
 
