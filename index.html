@@ -1,39 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booksky</title>
-    <link rel ="stylesheet" href ="style.css">
+
+    <title>College Library</title>
+
+    <link rel="stylesheet" href="style.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-</head>
+
 <body>
-    <div class ="navbar">
-        <h1>Booksky</h1>
-    </div>
-    <div class ="container">
-        <div class ="book-container">
-            <h2>Rich dad Poor Dad</h2>
-            <h5>Robert</h5>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores repellat at explicabo maxime? Possimus totam exercitationem atque similique ab fuga porro sequi incidunt est sapiente cumque veritatis, unde nihil deserunt!</p>
-            <button onclick = "deletebook(event)">Delete</button>
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1>College Library</h1>
+
+        <div class="nav-right">
+            <span>Home</span>
+            <span>Books</span>
+            <span>My Library</span>
         </div>
     </div>
-    <div class ="popup-overlay"></div>
-    <div class="popup-box">
-    <h2>Add Book</h2>
-    <form action="">
-        <input type ="text" placeholder ="Book title" id ="book-title-input">
-        <input type ="text" placeholder ="Book Author" id="book-Author-input">
-        <text area placeholder ="short Description" id="book-Description-input">
-            <button id ="Add-book">ADD</button>
-            <button id ="cancel-popup">Cancel</button>
-    </form>
+
+
+    <!-- Welcome Section -->
+    <div class="welcome">
+        <h2>Welcome to Our College Library 📚</h2>
+        <p>Find, borrow and manage your favourite books easily.</p>
     </div>
-    <button class ="add-button" id ="add-popup-overlay">+</button>
-    <script scr = "script.js"></script>
+
+
+    <!-- Search -->
+    <div class="search-area">
+        <input type="text" id="search-input" placeholder="Search book by title or author...">
+    </div>
+
+
+    <!-- Book Container -->
+    <div class="container" id="book-container">
+
+        <!-- Book 1 -->
+        <div class="book-container">
+
+            <h2>Rich Dad Poor Dad</h2>
+
+            <h4>Robert Kiyosaki</h4>
+
+            <p>
+                A popular book about financial education,
+                money management and investing.
+            </p>
+
+            <p class="status available">Available</p>
+
+            <button class="borrow-button" onclick="borrowBook(this)">
+                Borrow
+            </button>
+
+            <button class="delete-button" onclick="deleteBook(this)">
+                Delete
+            </button>
+
+        </div>
+
+
+        <!-- Book 2 -->
+        <div class="book-container">
+
+            <h2>Java Programming</h2>
+
+            <h4>Herbert Schildt</h4>
+
+            <p>
+                A useful book for learning Java programming,
+                object-oriented concepts and application development.
+            </p>
+
+            <p class="status available">Available</p>
+
+            <button class="borrow-button" onclick="borrowBook(this)">
+                Borrow
+            </button>
+
+            <button class="delete-button" onclick="deleteBook(this)">
+                Delete
+            </button>
+
+        </div>
+
+
+        <!-- Book 3 -->
+        <div class="book-container">
+
+            <h2>Python Basics</h2>
+
+            <h4>Mark Lutz</h4>
+
+            <p>
+                Learn Python programming concepts,
+                functions, lists, dictionaries and more.
+            </p>
+
+            <p class="status available">Available</p>
+
+            <button class="borrow-button" onclick="borrowBook(this)">
+                Borrow
+            </button>
+
+            <button class="delete-button" onclick="deleteBook(this)">
+                Delete
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Overlay -->
+    <div class="popup-overlay" id="popup-overlay"></div>
+
+
+    <!-- Add Book Popup -->
+    <div class="popup-box" id="popup-box">
+
+        <h2>Add New Book</h2>
+
+        <input
+            type="text"
+            id="book-title-input"
+            placeholder="Book Title"
+        >
+
+        <input
+            type="text"
+            id="book-author-input"
+            placeholder="Book Author"
+        >
+
+        <textarea
+            id="book-description-input"
+            placeholder="Short Description"
+        ></textarea>
+
+        <button id="add-book">
+            Add Book
+        </button>
+
+        <button id="cancel-popup">
+            Cancel
+        </button>
+
+    </div>
+
+
+    <!-- Floating Add Button -->
+    <button class="add-button" id="add-popup-button">
+        +
+    </button>
+
+
+    <script src="script.js"></script>
+
 </body>
+
 </html>

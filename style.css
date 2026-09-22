@@ -1,125 +1,313 @@
-*{
-    margin : 0;
+* {
+    margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-body{
+
+body {
     font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
 }
-.navbar{
-    background-color:#FD6569;
-    padding: 10px;
+
+
+/* Navbar */
+
+.navbar {
+    background-color: #5b3cc4;
+    color: white;
+    padding: 18px 40px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.container{
-    padding: 10px;
+
+.navbar h1 {
+    font-size: 28px;
+}
+
+.nav-right {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-right span {
+    cursor: pointer;
+}
+
+
+/* Welcome */
+
+.welcome {
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.welcome h2 {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.welcome p {
+    color: #666;
+}
+
+
+/* Search */
+
+.search-area {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-area input {
+    width: 60%;
+    padding: 13px 18px;
+
+    border: 1px solid #ccc;
+    border-radius: 25px;
+
+    font-size: 15px;
+    outline: none;
+}
+
+
+/* Book Container */
+
+.container {
+    padding: 20px 40px;
 }
 
 .book-container {
-    padding: 15px;
-    width: 25%;
-    background-color: black;
-    border-radius: 10px;
-    color: white;
-    margin: 30px;
+    width: 30%;
+    min-height: 260px;
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    margin: 15px;
+
     display: inline-block;
     vertical-align: top;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s;
+}
+
+.book-container:hover {
+    transform: translateY(-5px);
 }
 
 .book-container h2 {
-    color: #FD6569;
+    color: #5b3cc4;
+    margin-bottom: 8px;
 }
+
+.book-container h4 {
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.book-container p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* Status */
+
+.status {
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.available {
+    color: green !important;
+}
+
+.borrowed {
+    color: red !important;
+}
+
+
+/* Buttons */
 
 .book-container button {
-    background-color: #FD6569;
-    color: black;
-    border-radius: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
     border: none;
-    margin-top: 10px;
+    padding: 9px 15px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    margin-top: 12px;
+    margin-right: 5px;
 }
-.add-button{
-    background-color: #FD6569;
-    color: black;
-    border-radius: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    font-size: 40px;
-    border : none;
+
+.borrow-button {
+    background-color: #5b3cc4;
+    color: white;
+}
+
+.borrow-button:hover {
+    background-color: #432b99;
+}
+
+.delete-button {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #d93636;
+}
+
+
+/* Add Button */
+
+.add-button {
     position: fixed;
-    bottom: 30px;
+
     right: 30px;
+    bottom: 30px;
+
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background-color: #5b3cc4;
+    color: white;
+
+    font-size: 32px;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
+
+.add-button:hover {
+    transform: scale(1.1);
+}
+
+
+/* Popup Overlay */
 
 .popup-overlay {
-    background-color: black;
-    opacity: 0.8;
-    position: absolute;
-    width: 100%;
-    height: 100%;
+    position: fixed;
+
     top: 0;
     left: 0;
-    z-index: 1;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, 0.7);
+
     display: none;
+
+    z-index: 5;
 }
+
+
+/* Popup */
 
 .popup-box {
-    background-color: #FD6569;
-    width: 40%;
-    padding: 40px;
-    border-radius: 10px;
-    position: absolute;
-    top: 20%;
-    left: 30%;
-    z-index: 2;
-    display:none;
+    position: fixed;
+
+    width: 400px;
+
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    display: none;
+
+    z-index: 10;
 }
 
-.popup-box-input {
-    background: transparent;
-    border: none;
+.popup-box h2 {
+    margin-bottom: 20px;
+    color: #5b3cc4;
+}
+
+.popup-box input,
+.popup-box textarea {
     width: 100%;
-    margin: 5px;
-    padding: 5px;
-    font-size: 20px;
-    border-bottom: solid black 2px;
+
+    padding: 12px;
+
+    margin-bottom: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-family: 'Poppins', sans-serif;
+
+    outline: none;
 }
 
-.popup-box-textarea {
-    background: transparent;
-    width: 100%;
-    margin: 5px;
-    padding: 5px;
-    font-size: 20px;
-    border: solid black 2px;
-}
-
-.popup-box input::placeholder {
-    color: black;
-}
-
-.popup-box textarea::placeholder {
-    color: black;
+.popup-box textarea {
+    height: 100px;
+    resize: none;
 }
 
 .popup-box button {
-    background-color: black;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 10px 18px;
+
     border: none;
-    padding-top: 10px;
-    padding-bottom: 10px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    margin-right: 8px;
+}
+
+#add-book {
+    background-color: #5b3cc4;
     color: white;
-    margin: 5px;
 }
 
-.popup-box input:focus {
-    outline: none;
+#cancel-popup {
+    background-color: #ddd;
+    color: black;
 }
 
-.popup-box textarea:focus {
-    outline: none;
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .book-container {
+        width: 90%;
+    }
+
+    .search-area input {
+        width: 85%;
+    }
+
+    .popup-box {
+        width: 85%;
+    }
 }
